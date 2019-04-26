@@ -1,4 +1,4 @@
-package model;
+package org.input4j;
 
 import java.util.Scanner;
 
@@ -7,36 +7,49 @@ public abstract class Input {
 
 	public static Integer Int(String menssage) {
 		System.out.printf(menssage);
-		return Integer.parseInt(read.next());
+		Integer i = Integer.parseInt(read.next());
+		return i;
 	}
 
 	public static Long Long(String menssage) {
 		System.out.printf(menssage);
-		return Long.parseLong(read.next());
+		Long l = Long.parseLong(read.next());
+		return l;
 	}
 
 	public static Character Char(String menssage) {
 		System.out.printf(menssage);
-		return read.next().charAt(0);
+		Character c = read.next().charAt(0);
+		return c;
 	}
 
 	public static String Str(String menssage) {
 		System.out.printf(menssage);
-		return read.nextLine();
+		
+		//Corrige erro de pular leitura
+		if(read.hasNext()) {
+			read.nextLine();
+		}
+		
+		String s = read.nextLine();
+		return s;
 	}
 
 	public static Float Float(String menssage) {
 		System.out.printf(menssage);
-		return Float.parseFloat(read.next());
+		Float v = Float.parseFloat(read.next());
+		return v;
 	}
 
 	public static Double Double(String menssage) {
 		System.out.printf(menssage);
-		return Double.parseDouble(read.next());
+		Double d = Double.parseDouble(read.next());
+		return d;
 	}
 
 	public static Boolean Bool(String menssage) {
 		System.out.printf(menssage);
-		return Boolean.parseBoolean(read.next());
+		Boolean b = Boolean.parseBoolean(read.next());
+		return b;
 	}
 }
