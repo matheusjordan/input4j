@@ -27,8 +27,12 @@ public abstract class Input {
 	public static String Str(String menssage) {
 		Scanner rr = new Scanner(System.in);
 		System.out.printf(menssage);
-		String s = rr.nextLine();
-		rr.close();
+		String s = rr.next();
+		
+		if(rr.hasNextLine()) {
+			s += rr.nextLine();
+		}
+		
 		return s;
 	}
 
