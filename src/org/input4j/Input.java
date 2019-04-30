@@ -23,15 +23,12 @@ public abstract class Input {
 		return c;
 	}
 
+	//Impossivel utilizar o mesmo objeto dos outros inputs
 	public static String Str(String menssage) {
+		Scanner rr = new Scanner(System.in);
 		System.out.printf(menssage);
-		
-		//Corrige erro de pular leitura
-		if(read.hasNext()) {
-			read.nextLine();
-		}
-		
-		String s = read.nextLine();
+		String s = rr.nextLine();
+		rr.close();
 		return s;
 	}
 
